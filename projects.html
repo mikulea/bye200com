@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<style>
+
+    .projdesc {
+        margin-top: 0px;
+    }
+
+    .projectbox {
+        width: 45% !important;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        background-color: #c5c5c5;
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+
+    .projectbox h2{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .projectbox p, .projectbox h4, .projectbox h5 {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div style="max-width: 65%; margin: auto;">
+    <p>Not remotely cracked in any way. Making cool shit interests me, that's about it. AI armageddon is coming regardless, so everyone is fucked anyway. Creativity will be king when english becomes a viable programming language.</p>
+    <p>There's a whole graveyard of stuff I've done but dropped. I'm only really putting stuff I'm confident with here.</p>
+    {% for project in site.projects %}
+    <div class="projectbox">
+        <h2><a href="{{project.url}}">{{ project.proj-title }}</a></h2>
+        <h4>Started: {{ project.proj-createDate }}</h4>
+        <h5>Status: {{project.proj-status}}</h5>
+        <p class="projdesc">{{ project.proj-shortDesc }}</p>
+    </div>
+    {% endfor %}
+</div>
+
