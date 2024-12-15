@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<style>
+
+    .container {
+        width: 100%
+    }
+
+    .postbox {
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        background-color: #c5c5c5;
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+
+    .postbox h2 {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .postbox p, .postbox h4, .postbox h5 {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+</style>
+<div class="container">
+    <h2>Stream of consciousness</h2>
+    <p>A collection of things I wanted to write about. Read it or don't read it.</p>
+    {% assign sorted = site.p | reverse %}
+    {% for post in sorted %}
+    <div class="postbox">
+        <a href="{{post.url}}"><h2>{{ post.title }}</h2></a>
+        <h4>{{ post.date | date: "%Y-%m-%d %H:%M"}}</h4>
+        <p>{{ post.shortDesc }}</p>
+    </div>
+{% endfor %}
+<p>wow, it's pretty empty in here, huh</p>
+</div>
+
