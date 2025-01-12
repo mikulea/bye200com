@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<style>
+
+    .projdesc {
+        margin-top: 0px;
+    }
+
+    .projectbox {
+        text-align: left;
+        width: 35% !important;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        background-color: #c5c5c5;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .projectbox h2{
+        margin-bottom: 7px;
+        margin-top: 5px;
+    }
+
+    .projectbox p, .projectbox h4, .projectbox h5 {
+        margin-top: 0px;
+        margin-bottom: 7px;
+    }
+
+    .upperbox-lol {
+        border-color: black;
+        border-width: 1px;
+        border-style: solid;
+        background-color: #c5c5c5;
+        padding: 5px;
+        margin-bottom: 10px;
+        max-width: 50vw;
+    }
+
+</style>
+
+<div style="margin-left: 10px;">
+    <div class="upperbox-lol">
+        <p>Not remotely cracked in any way. Making cool shit interests me, that's about it. AI armageddon is coming regardless, so everyone is fucked anyway. Creativity will be king when english becomes a viable programming language.</p>
+        <p>There's a whole graveyard of stuff I've done but dropped. I'm only really putting stuff I'm confident with here.</p>
+    </div>
+    {% for project in site.projects %}
+    <div class="projectbox">
+        <h2><a href="{{project.url}}">{{ project.proj-title }}</a></h2>
+        <h4>Started: {{ project.proj-createDate }}</h4>
+        <h5>Status: {{project.proj-status}}</h5>
+        <p class="projdesc">{{ project.proj-shortDesc }}</p>
+    </div>
+    {% endfor %}
+    <p>this whole entire page looks like shit and i don't care</p>
+</div>
+
