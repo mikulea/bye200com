@@ -1,0 +1,150 @@
+---
+layout: default
+---
+
+<div style="text-align: center;">
+    <div id="frontbanner">
+        <div>
+        <img id="frontbanner-img" src="" alt="banner">
+        </div>
+        <p id="frontbanner-text"></p>
+    </div>
+
+    <h1>my stake on the internet</h1>
+    <p>lightly inspired by <a href="https://justinjackson.ca/words.html">"this is a web page"</a></p>
+    <p>reach me at: <a href="https://twitter.com/@misakax2">twitter</a>, or formally: me@bye200.com</p>
+    <p><a href="https://github.com/mikulea">github</a></p>
+</div>
+
+<script>
+    let banners = [
+        {
+            url: "https://pbs.twimg.com/media/EtAxL7DXEAAAuLF?format=jpg&name=large",
+            text: "where is my celty"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EtAxL7GXAAEsx3K?format=jpg&name=large",
+            text: ":heart:"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EtqPj3IWgAIgV2P?format=jpg&name=medium",
+            text: "mmm food"
+        },
+        {
+            url: "https://pbs.twimg.com/media/Etz1J8uWYAAw1er?format=jpg&name=360x360",
+            text: "baby, please kill me"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EuC3H1HXIAMuSVG?format=jpg&name=large",
+            text: "rhd"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EuigDbjXIAI6dvG?format=jpg&name=medium",
+            text: "school shooting, japan"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EuigDbiWgAY56xa?format=jpg&name=small",
+            text: "cannonball"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EunBXokXcAQHecx?format=jpg&name=900x900",
+            text: "c418 - wet hands"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EunBXonXUAgIHPj?format=jpg&name=large",
+            text: "school"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EunBXpKXUAYKOpz?format=jpg&name=small",
+            text: "float"
+        },
+        {
+            url: "https://pbs.twimg.com/media/Eu7pM8sXcAkf7vY?format=jpg&name=small",
+            text: "nice hardware"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EvLGXI_XAAACzUT?format=jpg&name=medium",
+            text: "convienence store, japan"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EvLGXJ6XIAgHXpn?format=jpg&name=large",
+            text: "convienence store at night, japan"
+        },
+        {
+            url: "https://pbs.twimg.com/media/Ev5enpUXMAE_bJA?format=jpg&name=900x900",
+            text: "my room if i was dropped more as a child"
+        },
+        {
+            url: "https://pbs.twimg.com/media/Ev_88AQWQAM-cUa?format=jpg&name=small",
+            text: "*checks pockets* FIVE? dollars for a redbull? are you out of your fucking mind!?"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EwZG3hgWgAclrYC?format=jpg&name=small",
+            text: "aww"
+        },
+        {
+            url: "https://pbs.twimg.com/media/Ew9sVijWgAEDOMO?format=jpg&name=small",
+            text: "i'm not a weeb, remember that"
+        },
+        {
+            url: "https://pbs.twimg.com/media/ExLvl7EUcAMuhq_?format=jpg&name=large",
+            text: "consumerism, japan"
+        },
+        {
+            url: "https://pbs.twimg.com/media/ExXY26KW8AcxNtR?format=jpg&name=medium",
+            text: "studying for what, again?"
+        },
+        {
+            url: "https://pbs.twimg.com/media/ExXY26SWQAAN5Md?format=jpg&name=medium",
+            text: "ever tried to run away from something in your dreams?"
+        },
+        {
+            url: "https://pbs.twimg.com/media/ExcihjfWEAIQllN?format=jpg&name=large",
+            text: "a nice way to die, i guess"
+        },
+        {
+            url: "https://pbs.twimg.com/media/ExbKYGLWUAMHqb-?format=jpg&name=medium",
+            text: "furi kuri!"
+        },
+        {
+            url: "https://pbs.twimg.com/media/Exh5GhpXIAADhuj?format=jpg&name=large",
+            text: "just shoot me at this point"
+        },
+        {
+            url: "https://pbs.twimg.com/media/EyTz3gKXIAkofr9?format=jpg&name=medium",
+            text: "me_irl"
+        },
+        {
+            url: "https://pbs.twimg.com/media/E5ollO7WEAQbLaN?format=jpg&name=medium",
+            text: "cool bike, man"
+        },
+        {
+            url: "https://pbs.twimg.com/media/Er4zYnNXUAAVIpq?format=jpg&name=medium",
+            text: "caught lacking"
+        },
+        {
+            url: "https://pbs.twimg.com/media/Er4zYnPXcAETYD5?format=jpg&name=medium",
+            text: "rice is nice"
+        },
+        {
+            url:"https://files.catbox.moe/6pdy0i.JPG",
+            text:"internet explorer"
+        },
+        {
+            url:"https://files.catbox.moe/3vwpy7.JPG",
+            text:"480x480"
+        },
+        {
+            url:"https://files.catbox.moe/9vbfyb.JPG",
+            text:"toshiba windows vista laptop"
+        }
+    ];
+
+    window.onload = function () {
+        const randomIndex = Math.floor(Math.random() * banners.length);
+        const randomBanner = banners[randomIndex];
+        document.getElementById('frontbanner-img').src = randomBanner.url;
+        document.getElementById('frontbanner-text').textContent = randomBanner.text;
+    }
+
+</script>

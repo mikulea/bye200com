@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<style>
+
+</style>
+
+<div style="margin-left: 10px; max-width: 50vw;">
+    <div class="chudbox">
+        <p>Not remotely cracked in any way. Making cool shit interests me, that's about it. AI armageddon is coming regardless, so everyone is fucked anyway. Creativity will be king when english becomes a viable programming language.</p>
+        <p>There's a whole graveyard of stuff I've done but dropped. I'm only really putting stuff I'm confident with here.</p>
+    </div>
+    {% for project in site.projects %}
+    <div class="chudbox">
+        <h2><a href="{{project.url}}">{{ project.proj-title }}</a></h2>
+        <h3>{{ project.proj-createDate }} : {{ project.proj-status }}</h3>
+        <p >{{ project.proj-shortDesc }}</p>
+    </div>
+    {% endfor %}
+    <p>this whole entire page looks like shit and i don't care</p>
+</div>
+

@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<style>
+    .droplet {
+        display: block;
+        text-align: left;
+        min-height: 100px;
+        max-width: fit-content;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        background-color: #c5c5c5;
+        padding: 7px;
+        margin-bottom: 10px;
+    }
+
+    .droplet .topbar {
+        margin-top: 0;
+    }
+
+    .droplet .author {
+        font-weight: bolder;
+        text-decoration: underline;
+    }
+
+    .droplet .date {
+        font-weight: lighter;
+    }
+
+    .droplet .image {
+        max-width: 150px;
+        max-height: 150px;
+        margin-right: 5px;
+    }
+
+    .droplet .content p {
+        margin-top: 0;
+    }
+
+
+
+</style>
+
+<div style="margin-left: 10px;">
+        {% assign sorted_droplets = site.soul | sort: 'date' | reverse %}
+        {% assign itemCount = site.soul | size %}
+        {%for droplet in sorted_droplets %}
+        <div class="droplet">
+            <div class="topbar">
+                <span class="author">{{ droplet.author }}</span>
+                <span class="date">{{ droplet.date | date: "%Y-%m-%d %H:%M:%S"}}</span>
+            <span class="index">No.{{ itemCount | minus: forloop.index | plus: 1 }}</span>
+            </div>
+            <div style="display: flex;">
+                {% if droplet.img %}
+                <img class="image" src="{{ droplet.img }}" alt="image">
+                {% endif %}
+                <div class="content">
+                    {{ droplet.content }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
